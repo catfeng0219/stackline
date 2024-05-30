@@ -53,6 +53,9 @@ export default function Graph({ salesData }: DataViewProps) {
       title: {
         display: true,
         text: "Retail and Wholesale Sales",
+        font: {
+          size: 18,
+        },
       },
     },
     scales: {
