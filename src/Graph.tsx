@@ -15,7 +15,6 @@ type DataViewProps = {
   salesData: SaleInfo[];
 };
 
-// Register the necessary components for Chart.js
 Chart.register(
   CategoryScale,
   LinearScale,
@@ -59,7 +58,7 @@ export default function Graph({ salesData }: DataViewProps) {
     scales: {
       x: {
         ticks: {
-          maxTicksLimit: 20, // Adjust this value as needed to fit your data
+          maxTicksLimit: 20,
         },
       },
     },
