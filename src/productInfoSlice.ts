@@ -1,16 +1,16 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ProductInfo } from './types';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ProductInfo } from "./types";
 
 const initialState: ProductInfo = {
-  title: '',
-  image: '',
-  subtitle: '',
+  title: "",
+  image: "",
+  subtitle: "",
   tags: [],
   sales: [],
 };
 
 const productInfoSlice = createSlice({
-  name: 'productInfo',
+  name: "productInfo",
   initialState,
   reducers: {
     setProductInfo: (_, action: PayloadAction<ProductInfo>) => {
@@ -19,5 +19,5 @@ const productInfoSlice = createSlice({
   },
 });
 
-export const {setProductInfo} = productInfoSlice.actions;
+export const { setProductInfo } = productInfoSlice.actions;
 export default productInfoSlice.reducer;

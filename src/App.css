@@ -14,7 +14,8 @@
   border-collapse: collapse;
 }
 
-.table th, .table td {
+.table th,
+.table td {
   padding: 8px;
   text-align: center;
   padding-top: 12px;
@@ -23,13 +24,15 @@
 }
 
 .banner {
-  background-color: darkblue;
+  background-color: rgb(2, 2, 106);
   padding: 18px;
   width: 100%;
+  display: flex;
 }
 
 .banner-logo {
   height: 30px;
+  justify-self: start;
 }
 
 .right-pane {
@@ -73,4 +76,18 @@ h3 {
 .main {
   display: flex;
   flex-direction: row;
+}
+
+.sales-category-heading {
+  background-color: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  border-width: 0;
+  padding: 5px 10px;
+}
+.sales-category-active {
+  font-weight: 700;
 }
