@@ -2,15 +2,15 @@ import stackline_logo from './assets/stackline_logo.svg';
 import './App.css';
 import jsonData from './data/stackline_frontend_assessment_data_2021.json';
 import {useDispatch} from 'react-redux';
-import {setData} from './store';
 import {useEffect} from 'react';
 import LeftPane from './LeftPane';
 import RightPane from './RightPane';
+import {setProductInfo} from './productInfoSlice';
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setData(jsonData[0]));
+    dispatch(setProductInfo(jsonData[0]));
   }, [dispatch]);
 
   return (

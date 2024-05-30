@@ -1,6 +1,9 @@
 import './App.css';
-import {DataViewProps} from './RightPane';
-import {SalesInfo} from "./store";
+import {SaleInfo} from './store';
+
+type DataViewProps = {
+    salesData: SaleInfo[];
+};
 
 export default function Table({salesData}: DataViewProps) {
     return (
@@ -15,7 +18,7 @@ export default function Table({salesData}: DataViewProps) {
           </tr>
         </thead>
         <tbody>
-          {salesData.map((sale: SalesInfo) => (
+          {salesData.map((sale: SaleInfo) => (
             <tr key={sale.weekEnding}>
               <td>{sale.weekEnding}</td>
               <td>{sale.retailSales}</td>

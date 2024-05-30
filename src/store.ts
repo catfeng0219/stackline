@@ -1,49 +1,30 @@
-import {createSlice, configureStore} from '@reduxjs/toolkit';
+// store.ts
+import {configureStore } from '@reduxjs/toolkit';
+import productInfoReducer from './productInfoSlice';
 
-export type SalesInfo = {
-  weekEnding: string;
-  retailSales: number;
-  wholesaleSales: number;
-  unitsSold: number;
-  retailerMargin: number;
+export type SaleInfo = {
+  "weekEnding": string;
+  "retailSales": number;
+  "wholesaleSales": number;
+  "unitsSold": number;
+  "retailerMargin": number;
 };
-
-export type StoreState = {
-  title: string,
-  image: string,
-  subtitle: string,
-  tags: string[],
-  sales: SalesInfo[],
+export interface ProductInfo {
+  title: string;
+  image: string;
+  subtitle: string;
+  tags: string[];
+  sales: SaleInfo[];
 }
-
-const initialState: StoreState = {
-  title: '',
-  image: '',
-  subtitle: '',
-  tags: [],
-  sales: [],
-};
-
-const slice = createSlice({
-  name: 'productInfo',
-  initialState,
-  reducers: {
-    setData: (state, action) => {
-      const {title, image, subtitle, sales} = action.payload;
-      state.title = title;
-      state.image = image;
-      state.subtitle = subtitle;
-      state.sales = sales;
-    },
-  },
-});
-
-export const {setData} = slice.actions;
 
 const store = configureStore({
   reducer: {
-    productInfo: slice.reducer,
+    productInfo: productInfoReducer,
+    // other reducers
   },
 });
+
+export type StoreState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 export default store;

@@ -1,5 +1,5 @@
 import {useSelector} from 'react-redux';
-import { StoreState } from './store';
+import {StoreState} from './store';
 
 export default function LeftPane() {
     const {title, tags, image, subtitle} = useSelector((state: StoreState) => state.productInfo);
