@@ -46,13 +46,18 @@ h3 {
 .tag {
   border-width: 1px;
   border-style: solid;
-  border-color: black;
+  border-color: lightgray;
   width: fit-content;
   padding: 3px;
   font-size: 10pt;
   margin-left: 3px;
+  border-radius: 4px;
 }
 .tags {
   display: flex;
   flex-direction: row;
+}
+.main {
+  flex-direction: row;
+  display: 'flex';
 }

@@ -1,7 +1,8 @@
-import { SalesInfo, DataViewProps } from "./App";
 import './App.css';
+import { DataViewProps } from './RightPane';
+import {SalesInfo} from "./store";
 
-export default function Table({ salesData }: DataViewProps) {
+export default function Table({salesData}: DataViewProps) {
     return (
       <table>
         <thead>
