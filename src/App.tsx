@@ -6,9 +6,10 @@ import { useEffect } from "react";
 import LeftPane from "./LeftPane";
 import RightPane from "./RightPane";
 import { setProductInfo } from "./productInfoSlice";
+import { AppDispatch } from "./store";
 
 function App() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
     dispatch(setProductInfo(jsonData[0]));
   }, [dispatch]);
