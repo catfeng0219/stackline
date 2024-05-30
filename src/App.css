@@ -34,13 +34,11 @@
 
 .right-pane {
   flex: 1;
-  background-color: chartreuse;
 }
 
 .left-pane {
   padding: 20px;
   width: 300px;
-  background-color: aqua;
 }
 
 .product-image {
@@ -73,7 +71,6 @@ h3 {
 }
 
 .main {
-  display: flex; /* Corrected this line */
+  display: flex;
   flex-direction: row;
-  background-color: blueviolet;
 }
