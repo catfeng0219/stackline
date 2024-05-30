@@ -1,6 +1,6 @@
 import "./App.css";
 import { SaleInfo } from "./types";
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
 
 type DataViewProps = {
   salesData: SaleInfo[];
@@ -37,11 +37,11 @@ const headerConfig: HeaderInfo[] = [
 ];
 
 export default function Table({ salesData }: DataViewProps) {
-  const [orderedItems, setOrderedItems] = useState<SaleInfo[]>([]);
   const [isAscending, setIsAscending] = useState<boolean>(true);
   const [category, setCategory] = useState<SaleCategory>("weekEnding");
-  useEffect(() => {
-    setOrderedItems(sortSalesByCategory([...salesData], category, isAscending));
+
+  const orderedItems = useMemo(() => {
+    return sortSalesByCategory([...salesData], category, isAscending);
   }, [category, salesData, isAscending]);
 
   const onCategoryClick = (selectedCategory: SaleCategory) => {
@@ -68,6 +68,7 @@ export default function Table({ salesData }: DataViewProps) {
         </tr>
       </thead>
       <tbody>
+        {/* TODO: virtualize/paginate items to handle larger data lists */}
         {orderedItems.map((sale: SaleInfo) => (
           <tr key={sale.weekEnding}>
             <td>{sale.weekEnding}</td>
