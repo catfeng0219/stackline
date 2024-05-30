@@ -1,4 +1,3 @@
-// store.ts
 import {configureStore } from '@reduxjs/toolkit';
 import productInfoReducer from './productInfoSlice';
 
@@ -20,7 +19,6 @@ export interface ProductInfo {
 const store = configureStore({
   reducer: {
     productInfo: productInfoReducer,
-    // other reducers
   },
 });
 

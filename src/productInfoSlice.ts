@@ -1,4 +1,3 @@
-// productInfoSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {ProductInfo} from './store';
 
