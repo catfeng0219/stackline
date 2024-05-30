@@ -1,5 +1,5 @@
 import './App.css';
-import {SaleInfo} from './store';
+import {SaleInfo} from './types';
 
 type DataViewProps = {
     salesData: SaleInfo[];

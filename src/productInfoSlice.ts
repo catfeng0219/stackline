@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import {ProductInfo} from './store';
+import { ProductInfo } from './types';
 
 const initialState: ProductInfo = {
   title: '',
