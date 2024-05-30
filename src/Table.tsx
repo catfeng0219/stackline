@@ -1,5 +1,5 @@
 import './App.css';
-import { DataViewProps } from './RightPane';
+import {DataViewProps} from './RightPane';
 import {SalesInfo} from "./store";
 
 export default function Table({salesData}: DataViewProps) {
